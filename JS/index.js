@@ -1,3 +1,4 @@
+window.onload = (event) => {
 var jsonData = [
     {"title": "home", "url": "/"},
     {"title": "producten", "url": "/producten/"},
@@ -19,4 +20,4 @@ for(let i=1; i<5; i++){
     navItem.href = `#menu-${i}`;
     navList.appendChild(navItem);
 }
-  
+};
