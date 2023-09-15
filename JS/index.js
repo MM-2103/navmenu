@@ -9,15 +9,22 @@ var jsonData = [
 var firstTitle = jsonData[0].title;
 console.log(firstTitle); // This will log "home"
 
+function createMenu(data) {
 
-const navList = document.getElementById("navbar_list");
+var menu = document.getElementById('navbar_list');
 
-for(let i=1; i<5; i++){
-    const navItem = document.createElement("a");
-    navItem.classList.add("menu-items");
-    navItem.setAttribute("id", `menu-${i}`);
-    navItem.innerText = `Section ${i}`;
-    navItem.href = `#menu-${i}`;
-    navList.appendChild(navItem);
+            data.forEach(function(item) {
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+
+                a.href = item.url;
+                a.textContent = item.title;
+
+                li.appendChild(a);
+                menu.appendChild(li);
+            });
 }
+
+createMenu(jsonData);
+
 };
